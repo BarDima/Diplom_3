@@ -25,7 +25,6 @@ def web_driver(request):
     else:
         raise TypeError("Driver is not found")
 
-    driver.implicitly_wait(10)
     driver.get(URL)
     yield driver
     driver.quit()
