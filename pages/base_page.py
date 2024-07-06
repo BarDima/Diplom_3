@@ -53,7 +53,7 @@ class BasePage:
 
     @allure.step('ожидание появления элемента и возвращение текста')
     def wait_element_return_text(self, locator):
-        return self.wait_loading_element(locator).text
+        return self.wait_element(locator).text
 
     @allure.step('ожидание появления и клик по перекрытому элементу')
     def wait_and_click_invisible_element(self, locator, timeout=30):
@@ -70,7 +70,4 @@ class BasePage:
         element = self.web_driver.find_element(*locator)
         return element.text
 
-    @allure.step('Найти элемент')
-    def wait_loading_element(self, locator):
-        WebDriverWait(self.web_driver, 20).until(EC.visibility_of_element_located(locator))
-        return self.web_driver.find_element(*locator)
+
