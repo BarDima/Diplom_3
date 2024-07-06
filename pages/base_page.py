@@ -65,7 +65,7 @@ class BasePage:
         elements = WebDriverWait(self.web_driver, timeout).until(EC.presence_of_all_elements_located(locator))
         return [element.text for element in elements]
 
-
+    @allure.step('поиск элемента и возвращение текста')
     def find_element_return_text(self, locator):
         element = self.web_driver.find_element(*locator)
         return element.text
