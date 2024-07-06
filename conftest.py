@@ -1,3 +1,4 @@
+import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -8,7 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from config import URL
 
-
+@allure.step('запуск браузерв')
 @pytest.fixture(params=["chrome", "firefox"])
 def web_driver(request):
     if request.param == "chrome":
