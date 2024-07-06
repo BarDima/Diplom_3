@@ -16,6 +16,7 @@ def registration_user():
     access_token = response_data["accessToken"]
     return access_token, email, password, name
 
+@allure.step("удаление пользователя")
 def delete_user(access_token):
     headers = {
         "Authorization": access_token
