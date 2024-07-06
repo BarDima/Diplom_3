@@ -8,9 +8,6 @@ import allure
 class ForgotPassword(BasePage):
     def __init__(self, web_driver):
         super().__init__(web_driver)
-    @allure.step("Клик по кнопке войти в аккаунт")
-    def click_login_button(self):
-        self.wait_and_click_element(ForgotPasswordLocators.login_to_account_button)
 
     @allure.step("Клик по кнопке Восстановить пароль")
     def click_forgot_password_button(self):

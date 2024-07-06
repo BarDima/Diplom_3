@@ -8,10 +8,6 @@ class PersonalAccount(BasePage):
     def __init__(self, web_driver):
         super().__init__(web_driver)
 
-    @allure.step("клик по кнопке войти в аккаунт")
-    def click_enter_account_button(self):
-        self.wait_and_click_element(BasePageLocators.enter_account_button)
-
     @allure.step("клик по кнопке личный кабинет")
     def click_personal_account_button(self):
         self.wait_and_click_element(BasePageLocators.personal_account_button)

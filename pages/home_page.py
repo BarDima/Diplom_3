@@ -52,10 +52,6 @@ class HomePage(BasePage):
     def wait_counter_increases_ingredients(self):
         return self.wait_element(HomePageLocators.counter_increases)
 
-    @allure.step("клик по кнопке войти в аккаунт")
-    def click_enter_account_button(self):
-        self.wait_and_click_element(BasePageLocators.enter_account_button)
-
     @allure.step("ввод данных в поле email")
     def enter_email_fild(self, email):
         self.enter_text_to_field(BasePageLocators.EMAIL_FIELD, email)

@@ -8,14 +8,14 @@ class TestForgotPasswordPage:
     @allure.title("переход на страницу восстановления пароля по кнопке «Восстановить пароль»")
     def test_password_recovery_button(self, web_driver):
         forgot_password = ForgotPassword(web_driver)
-        forgot_password.click_login_button()
+        forgot_password.click_enter_account_button()
         forgot_password.click_forgot_password_button()
         assert forgot_password.get_current_url() == url_password_recovery
 
     @allure.title("ввод почты и клик по кнопке «Восстановить»")
     def test_enter_email_recovery(self, web_driver):
         forgot_password = ForgotPassword(web_driver)
-        forgot_password.click_login_button()
+        forgot_password.click_enter_account_button()
         forgot_password.click_forgot_password_button()
         forgot_password.enter_email_recovery()
         forgot_password.click_recovery_button()
@@ -25,7 +25,7 @@ class TestForgotPasswordPage:
     @allure.title("клик по кнопке показать/скрыть пароль делает поле активным — подсвечивает его")
     def test_click_show_password_button(self, web_driver):
         forgot_password = ForgotPassword(web_driver)
-        forgot_password.click_login_button()
+        forgot_password.click_enter_account_button()
         forgot_password.click_forgot_password_button()
         forgot_password.enter_email_recovery()
         forgot_password.click_recovery_button()

@@ -2,6 +2,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import allure
+from locators.base_page_locators import BasePageLocators
 
 
 class BasePage:
@@ -69,5 +70,9 @@ class BasePage:
     def find_element_return_text(self, locator):
         element = self.web_driver.find_element(*locator)
         return element.text
+
+    @allure.step("клик по кнопке войти в аккаунт")
+    def click_enter_account_button(self):
+        self.wait_and_click_element(BasePageLocators.enter_account_button)
 
 
